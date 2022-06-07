@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import {estoque} from '../../common/utils/data';
+import Blog from '../../components/Blog';
+import BotaoPesquisar from '../../components/BotaoPesquisar';
+import Header from '../../components/Header';
+import Navbar from '../../components/navbar';
+import Painel from '../../components/painel';
 import style from './Home.module.scss';
 
 export interface Props{
@@ -92,55 +97,18 @@ function Home() {
     <>
 
       <header>
-        <section className={style.titulo}>
-            <section className={style.titulo__cabecalho}>
-                <h1>Reviva Fashion</h1>
-                <span className={style.subtitulo}>by RCHLO</span>
-            </section>
+        <Header/>
+        <Navbar/>
 
-            <a href="#">
-                <img  src={process.env.PUBLIC_URL + 'img/icons/shopping.svg'} alt="sacola de compra" />
-            </a>
-            
-        </section>
-
-        <nav className={style.navegacao}>
-          <ul className={style.navegacao__opcoes}>
-               <li className={style.nav__item_menu}>
-                  <a className={style.link} href="#">Pagina Inicial</a>
-               </li>
-               <li className={style.nav__item_menu}>
-                   <a className={style.link} href="#">Masculina</a>
-                </li>
-                <li className={style.nav__item_menu}>
-                   <a className={style.link} href="#">Moda Feminina</a>
-                </li>
-                <li className={style.nav__item_menu}>
-                  <a className={style.link} href="#">Moda Infantíl</a>
-                </li>
-                <li className={style.nav__item_menu}>
-                  <a className={style.link} href="#">Manual de Moda</a>
-                </li>
-           </ul>
-          
-
-        </nav>
+        
 
     </header>
 
     <main className={style.principal}>
 
+      <BotaoPesquisar/>
+
     
-
-    <section className={style.pesquisa}>
-            <div className={style.conteudo__pesquisa}>
-
-                <input className={style.campo__info} type="search " placeholder="Faça sua busca aqui se já souber o que está procurando... "></input>
-                <img className={style.botao__lupa} src={process.env.PUBLIC_URL + 'img/icons/search-icon.svg'} alt="Botão pesquisar"></img>
-
-            </div>
-
-      </section>
 
       <h2>Últimos lançamentos</h2>
 
@@ -199,15 +167,7 @@ function Home() {
       ))}
       </section>
 
-      <section className={style.painel}>
-            <section className={style.secao__painel}>
-                <p className={style.centralizarTexto}>Fique por dentro de tudo que há de novidade no mundo da moda!</p>
-                <h2 className={style.centralizarTexto}>Baixe já nosso manual de moda!</h2>
-                <h3 className={style.logoPainel}>Reviva Fashion</h3>
-                <span className={style.logoPainel}>by RCHLO</span>
-            </section>
-
-      </section>
+      <Painel/>
       <h2>Coleção de Verão 2022</h2>
       <section className={style.secao}>
 
@@ -254,32 +214,7 @@ function Home() {
 </section>
 
 
-<section className={style.painel__centro}>
-
-
-    <div className={style.painel__central}>
-        <figure>
-
-            <img src={process.env.PUBLIC_URL + "img/blog/painel.png"} className={style.imagem__total}/>
-            <p className={style.painel__descricao}>O que fazer com o look que usou no carnaval? Confira já como fazer uso dessas mesmas peças no inverso e continuar na moda!</p>
-
-        </figure>
-
-        <section className={style.painel__subsecao}>
-
-            <section className={style.painel__divisao}>
-            <img src={process.env.PUBLIC_URL + "img/blog/loja.jpg"}/>
-            <p className="painel__descricao">O que fazer com o look que usou no carnaval? Confira já como fazer uso dessas mesmas peças no inverso e continuar na moda!</p>
-            </section>  
-            <section className={style.painel__divisao}>
-            <img src={process.env.PUBLIC_URL + "img/blog/loja.jpg"}/>
-            <p className="painel__descricao">O que fazer com o look que usou no carnaval? Confira já como fazer uso dessas mesmas peças no inverso e continuar na moda!</p>
-            </section>  
-
-        </section>  
-
-      </div>   
-  </section>    
+          <Blog/>
     
 
     </main>

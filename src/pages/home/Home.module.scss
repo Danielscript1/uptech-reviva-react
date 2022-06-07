@@ -16,16 +16,6 @@
     font-size: $font-subTituloCabacalho;
 }
 
-.titulo {
-    @include titulo;
-    .titulo__cabecalho {
-        @include tituloCabecalho;
-        .subtitulo {
-            @include subTituloCabecalho;
-        }
-    }
-}
-
 @mixin navegacao($navegacao) {
     @if $navegacao==0 {
         display: flex;
@@ -41,23 +31,6 @@
     }
 }
 
-.navegacao {
-    @include navegacao(0);
-    .navegacao__opcoes {
-        @include navegacao(1);
-        .nav__item_menu {
-            margin: 1rem;
-            list-style: none;
-            .link {
-                color: $cor-secundario;
-                &:hover {
-                    color: aqua;
-                }
-            }
-        }
-    }
-}
-
 @mixin principal {
     padding: 2rem 2.5rem;
     display: grid;
@@ -67,28 +40,6 @@
 
 .principal {
     @include principal;
-}
-
-.pesquisa {
-    width: 100%;
-    overflow: hidden;
-    cursor: pointer;
-    margin-bottom: 5rem;
-    .conteudo__pesquisa {
-        display: grid;
-        grid-template-columns: 1fr auto;
-        gap: 2rem;
-        font-size: 2rem;
-        .campo__info {
-            margin-right: 8px;
-            width: 100%;
-        }
-        .botao__lupa {
-            margin-right: 8px;
-            background-color: $cor-primaria;
-            padding: 5px 2rem;
-        }
-    }
 }
 
 @mixin borda {
@@ -172,38 +123,6 @@
 @mixin logoPainel($logo, $tamanhoTexto) {
     text-align: end;
     font-size: $tamanhoTexto;
-}
-
-.painel {
-    width: 100%;
-    overflow: hidden;
-    color: #fff;
-    .secao__painel {
-        display: grid;
-        grid-template-rows: repeat(3, 1fr);
-        padding: 2rem;
-        background-color: $cor-primaria;
-        font-size: 3rem;
-        .centralizarTexto {
-            text-align: center;
-        }
-        .logoPainel {
-            @include logoPainel(logo, 2rem);
-        }
-    }
-}
-
-.painel__central {
-    @include grid(0, 1, 1fr 2fr, 1rem);
-    font-size: 5rem;
-    .painel__subsecao {
-        display: grid;
-        grid-template-rows: 1fr 1fr;
-        gap: 2rem;
-        .painel__divisao {
-            @include grid(0, 1, auto 1fr, 3rem)
-        }
-    }
 }
 
 .rodape {

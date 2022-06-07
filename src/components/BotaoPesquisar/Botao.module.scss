@@ -1,0 +1,22 @@
+@import '../../main/Variaveis.module.scss';
+.pesquisa {
+    width: 100%;
+    overflow: hidden;
+    cursor: pointer;
+    margin-bottom: 5rem;
+    .conteudo__pesquisa {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 2rem;
+        font-size: 2rem;
+        .campo__info {
+            margin-right: 8px;
+            width: 100%;
+        }
+        .botao__lupa {
+            margin-right: 8px;
+            background-color: $cor-primaria;
+            padding: 5px 2rem;
+        }
+    }
+}
