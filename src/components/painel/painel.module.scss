@@ -1,0 +1,19 @@
+@import '../../pages/home/Home.module.scss';
+.painel {
+    width: 100%;
+    overflow: hidden;
+    color: #fff;
+    .secao__painel {
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        padding: 2rem;
+        background-color: $cor-primaria;
+        font-size: 3rem;
+        .centralizarTexto {
+            text-align: center;
+        }
+        .logoPainel {
+            @include logoPainel(logo, 2rem);
+        }
+    }
+}

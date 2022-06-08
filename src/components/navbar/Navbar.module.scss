@@ -1,0 +1,17 @@
+@import '../../pages/home/Home.module.scss';
+.navegacao {
+    @include navegacao(0);
+    .navegacao__opcoes {
+        @include navegacao(1);
+        .nav__item_menu {
+            margin: 1rem;
+            list-style: none;
+            .link {
+                color: $cor-secundario;
+                &:hover {
+                    color: aqua;
+                }
+            }
+        }
+    }
+}

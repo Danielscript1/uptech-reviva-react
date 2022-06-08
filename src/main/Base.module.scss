@@ -1,0 +1,9 @@
+@import "./Variaveis.module.scss";
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-size: 62.5%;
+    font-family: $fonte-principal;
+}

@@ -1,0 +1,55 @@
+@import '../../pages/home/Home.module.scss';
+.rodape {
+    width: 100%;
+    background-color: $cor-primaria;
+    color: #fff;
+    display: grid;
+    grid-template-rows: repeat(1, 1fr);
+    .titulo__rodape {
+        display: grid;
+        margin: 2.4rem;
+        font-size: 3.5rem;
+        .subtitulo__rodape {
+            padding-left: 5rem;
+        }
+    }
+    .menu__rodape {
+        @include grid(0, 4, 1fr, 2rem);
+        color: #fff;
+        .centralizar {
+            padding-left: 2.5rem;
+            font-size: 2rem;
+        }
+        .nav__item_rodape {
+            margin: 2.5rem;
+            list-style: none;
+            .item__link {
+                font-size: 2rem;
+                color: #fff;
+            }
+        }
+        .redes {
+            cursor: pointer;
+            color: #fff;
+            .tamanho__texto {
+                font-size: 2rem;
+            }
+        }
+        .contatos {
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-self: flex-start;
+            .centralizar {
+                padding-left: 2.5rem;
+                font-size: 2rem;
+            }
+        }
+        .Assinar {
+            font-size: 2.4rem;
+            .tamanho__texto {
+                font-size: 2.4rem;
+            }
+        }
+    }
+}

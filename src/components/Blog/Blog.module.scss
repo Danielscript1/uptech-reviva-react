@@ -1,0 +1,13 @@
+@import '../../pages/home/Home.module.scss';
+.painel__central {
+    @include grid(0, 1, 1fr 2fr, 1rem);
+    font-size: 5rem;
+    .painel__subsecao {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        gap: 2rem;
+        .painel__divisao {
+            @include grid(0, 1, auto 1fr, 3rem)
+        }
+    }
+}

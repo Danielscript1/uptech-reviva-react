@@ -1,0 +1,10 @@
+@import '../../pages/home/Home.module.scss';
+.titulo {
+    @include titulo;
+    .titulo__cabecalho {
+        @include tituloCabecalho;
+        .subtitulo {
+            @include subTituloCabecalho;
+        }
+    }
+}
