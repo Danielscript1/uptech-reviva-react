@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './main/App';
-
+import Home from './pages/home';
+import './styles/Base.module.scss'
 
 
 
@@ -10,7 +10,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App/>
+    <Home/>
   </React.StrictMode>
 );
 
