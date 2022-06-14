@@ -1,4 +1,8 @@
-export const carrinho = [
+import { atom } from "recoil";
+import IListaProdutos from "Interfaces/IListaProdutos";
+export const carrinho = atom<IListaProdutos[]>({
+  key: 'carrinho',
+  default:[
   { 
     id:0,  
     nome: 'Camiseta Social Masculina',
@@ -8,10 +12,11 @@ export const carrinho = [
     tamanhos_disponiveis: ['P', 'M', 'G'],
     quantidade_disponivel: 12,
     subTotal:0,
-    imagens: {
+    secaoProdutos:1,
+    imagens: [{
          url: process.env.PUBLIC_URL + 'img/camisa6.png',
          descricao: 'camiseta social masculina no tamanho p' 
-    },
+    }],
 },
 
 {   id:1,  
@@ -22,9 +27,16 @@ export const carrinho = [
     tamanhos_disponiveis: ['P', 'M', 'G'],
     quantidade_disponivel: 12,
     subTotal:0,
-    imagens: 
+    secaoProdutos:1,
+    imagens:
+    [ 
         { url: process.env.PUBLIC_URL + 'img/camisa3.png',
          descricao: 'camiseta molentom  tamanho p' }
-    
-}
-]
+    ]
+}]
+})
+
+export const statusCarrinho = atom<IListaProdutos[]>({
+  key: 'carrinhoCompra',
+  default: []
+});

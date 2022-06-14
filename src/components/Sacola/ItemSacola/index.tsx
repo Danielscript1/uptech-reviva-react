@@ -1,17 +1,17 @@
 import { carrinho } from 'common/utils/produtosCarrinhos';
+import IListaProdutos from 'Interfaces/IListaProdutos';
 import style from "./ItemSacola.module.scss";
 
-type IPcarrinho = typeof carrinho[0];
 
 
-export default function ItemSacola(props:IPcarrinho){
+export default function ItemSacola(props:IListaProdutos){
     const {nome,url,preco,descricao,tamanhos_disponiveis,quantidade_disponivel,subTotal,imagens} = props;
   return(
    <>
    
        <section className={style.compra__categoria}>
                         <picture>
-                            <img src={imagens.url} className={style.compra__camisa}></img>
+                            <img src={imagens[0].url} className={style.compra__camisa}></img>
                         </picture>
                         <section>
                             <h2>{nome}</h2>
