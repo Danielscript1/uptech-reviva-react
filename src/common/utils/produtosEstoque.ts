@@ -1,7 +1,7 @@
 import { atom } from "recoil";
 import IListaProdutos from "Interfaces/IListaProdutos"
-export const listaDeProdutos = atom<IListaProdutos[]>({
-   key: 'listaDeProdutos',
+export const produtosEstoque = atom<IListaProdutos[]>({
+   key: 'produtosEstoque',
     default:[
   {   id:0,  
       nome: 'Camiseta Social Masculina',

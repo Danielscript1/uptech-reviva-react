@@ -1,8 +1,13 @@
+import { useState } from 'react';
 import style from './Navbar.module.scss';
 export default function Navbar(){
+  
+
+
 return(
   <nav className={style.navegacao}>
-          <ul className={style.navegacao__opcoes}>
+       
+          <ul className={style.navegacao__opcoes} >
                <li className={style.nav__item_menu}>
                   <a className={style.link} href="#">Pagina Inicial</a>
                </li>

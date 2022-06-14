@@ -1,0 +1,16 @@
+.total {
+    display: flex;
+    width: 50%;
+    &__informacoes {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        padding: 2rem;
+        background-color: rgb(200, 173, 173);
+        .total__divisao {
+            display: flex;
+            justify-content: space-between;
+            font-size: 3rem;
+        }
+    }
+}

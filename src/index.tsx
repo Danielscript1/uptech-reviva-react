@@ -1,6 +1,7 @@
+import Carrinho from 'pages/carrinho';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Home from './pages/home';
+import { RecoilRoot } from 'recoil';
 import './styles/Base.module.scss'
 
 
@@ -10,7 +11,10 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <Home/>
+    <RecoilRoot>
+    <Carrinho/>
+    </RecoilRoot>
+    
   </React.StrictMode>
 );
 
