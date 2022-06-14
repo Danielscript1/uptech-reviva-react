@@ -3,23 +3,28 @@ import Total from './Total';
 import style from './Sacola.module.scss';
 import {carrinho} from "common/utils/produtosCarrinhos";
 import { useRecoilValue } from 'recoil';
+import { CalculoTotal } from 'common/funcoes/calculoTotalCarrinho';
 
-const produto = Object.values(carrinho);
+
+
 
 export default function Sacola(){
- 
+   const produtosSacola = useRecoilValue(carrinho);
+   const total = CalculoTotal(produtosSacola);
+  
   return(
     
      <div className={style.compra}>
       <div>
-      {produto.map(item =>(
+      {produtosSacola.map(item =>(
          <ItemSacola
          key={item.id}
          {...item}
          />
       ))}
       </div>
-      <Total/>
+      
+      <Total total={total}  />
       </div>
   
 

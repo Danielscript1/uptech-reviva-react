@@ -1,3 +1,4 @@
+import { CalculoTotal } from 'common/funcoes/calculoTotalCarrinho';
 import { carrinho } from 'common/utils/produtosCarrinhos';
 import IListaProdutos from 'Interfaces/IListaProdutos';
 import style from "./ItemSacola.module.scss";
@@ -33,7 +34,7 @@ export default function ItemSacola(props:IListaProdutos){
                         </section>
                         <section>
                             <h2>Quantidade</h2>
-                            <input type="number" size={2}/>
+                            <input type="number"   size={2}/>
                         </section>
                         <section>
                             <h2>Subtotal</h2>

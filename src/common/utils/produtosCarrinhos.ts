@@ -10,7 +10,7 @@ export const carrinho = atom<IListaProdutos[]>({
     preco: 39.90,
     descricao: 'A Camiseta Lipp é linda para ser usada em qualquer lugar',
     tamanhos_disponiveis: ['P', 'M', 'G'],
-    quantidade_disponivel: 12,
+    quantidade_disponivel: 10,
     subTotal:0,
     secaoProdutos:1,
     imagens: [{
