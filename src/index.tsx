@@ -5,7 +5,6 @@ import { RecoilRoot } from 'recoil';
 import './styles/Base.module.scss'
 
 
-
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
