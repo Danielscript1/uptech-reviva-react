@@ -1,5 +1,9 @@
 import style from './Header.module.scss';
+import { Link } from 'react-router-dom';  
+
 export default function Header(){
+
+ 
   return(
     <section className={style.titulo}>
     <section className={style.titulo__cabecalho}>
@@ -7,9 +11,9 @@ export default function Header(){
         <span className={style.subtitulo}>by RCHLO</span>
     </section>
 
-    <a href="#">
+    <Link to='/carrinho'>
         <img  src={process.env.PUBLIC_URL + 'img/icons/shopping.svg'} alt="sacola de compra" />
-    </a>
+    </Link>
     
 </section>
   )
