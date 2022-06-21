@@ -11,10 +11,10 @@ export default function Carrinho(){
   return(
     <>
      <RecoilRoot>
-    <Main>
+    
     <BotaoPesquisar/>
     <Sacola/>
-    </Main>
+    
     </RecoilRoot>
     
     </>

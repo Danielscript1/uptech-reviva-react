@@ -6,7 +6,7 @@ import {listaDeProdutos} from 'common/utils/data';
 import Blog from '../../components/Blog';
 import BotaoPesquisar from '../../components/BotaoPesquisar';
 import Painel from '../../components/painel';
-import style from './Home.module.scss';
+
 
 
 
@@ -22,13 +22,13 @@ function Home() {
     <>
 
     <RecoilRoot>  
-        <Main>
+       
         <BotaoPesquisar/>
         <ListaDeProdutos titulo='Últimos lançamentos'  Produtos={secaoProdutos1}/>
         <Painel/>
         <ListaDeProdutos titulo='Coleção de Verão 2022' Produtos={secaoProdutos2}/>
         <Blog/>
-        </Main>
+       
        
       </RecoilRoot>
     </>

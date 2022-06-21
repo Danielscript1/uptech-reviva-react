@@ -1,13 +1,15 @@
-//import { Props } from 'pages/home';
-import { useState } from 'react';
 import {listaDeProdutos} from 'common/utils/data';
-import style from "./ListaProdutos.module.scss";
 import IListaProdutos from "Interfaces/IListaProdutos";
 import { useRecoilState, useRecoilValue } from 'recoil';
 import {  statusCarrinho } from 'common/utils/produtosCarrinhos';
 import { addCarrinho } from 'state/hooks/useAdicionarCarrinho';
 import { diminuiEstoque } from 'state/hooks/useDiminuiEstoque';
-
+import { Link } from 'react-router-dom';
+import TamanhosDisponivel from 'components/TamanhosDisponivel';
+import BotaoSacola from '../BotaoSacola';
+import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
+import {Titulo,DescricaoItems,SecaoImagem } from 'styles/index';
 export interface imagens{
   url:string;
   descricao:string;
@@ -33,10 +35,22 @@ interface listaProdutos{
   
 }
 
+const Secao = styled.section`
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+
+`;
+
+const ContainerBorda = styled.section`
+    border: 1px solid #000;
+
+`
 
 
 
 export  function ListaDeProdutos({titulo,Produtos}:listaProdutos){
+  const navigate = useNavigate();
 
    const [carrinho, setCarrinho] =  useRecoilState(statusCarrinho);
    const [estoque, setEstoque] = useRecoilState(listaDeProdutos);
@@ -48,63 +62,47 @@ export  function ListaDeProdutos({titulo,Produtos}:listaProdutos){
     const estoqueProduto= diminuiEstoque(estoque, produtos);
     setEstoque(estoqueProduto); 
     console.log("estoque",estoque) 
+
     
+   
     
   }
+
+
+
+  function redirecionarParaDetalhes(produtos:Props){
+   
+   navigate(`/detalhes/${produtos.id}`, {state:{produtos},replace:true});
+  } 
 
  return(
 
 
 <>
 
-<h2>{titulo}</h2>
 
-<section className={style.secao}>
-
-
+<Titulo>{titulo}</Titulo>
+<Secao>
 
 {Produtos.map((item) =>(
    
   
   <div className='cartao' key={item.id}> 
-  
+      <ContainerBorda>
+        <SecaoImagem width="100"  src={item.imagens[0].url} alt={item.imagens[0].descricao}/>
+        <TamanhosDisponivel tamanhos={item.tamanhos_disponiveis}/>
+      </ContainerBorda>
+      <Link to={`/detalhes/${item.id}`} onClick={()=>redirecionarParaDetalhes(item)}>
+        <Titulo>{item.nome}</Titulo>
+        <DescricaoItems >R${item.preco}</DescricaoItems>
+      </Link>
     
-    <section className={style.cartao__conteudo}>
-      <img  className='cartao__camisa'  src={item.imagens[0].url} alt={item.imagens[0].descricao}/>
-   
+    <BotaoSacola  onClick={()=>sacolaCompra(item)}>POR NA SACOLA</BotaoSacola>
 
-        <div className={style.camisa__tamanhos}>
-        {item.tamanhos_disponiveis.map((t,index) =>  (
-              <label key={index} className={style.opcoes__tamanhos}>
-                <input type="radio"  name="tamanho" value={item.tamanhos_disponiveis[index]}/>
-                {item.tamanhos_disponiveis[index]}
-                
-              </label>
-          
-          ))}
-              
-        </div>
-    </section> 
-
-    <section className={style.cartao__info}>
-      <a href="produtosDetalhes.html">
-        <h3 className={style.cartao__titulo}>{item.nome}</h3>
-        <p className={style.cartao__preco}>R${item.preco}</p>
-      </a>
-    </section>
-
-    <section className={style.espaco__botao}>
-
-          
-    <button className={style.botao} onClick={()=>sacolaCompra(item)}>
-            POR NA SACOLA <img src={process.env.PUBLIC_URL + 'img/icons/shopping.svg'} width="20px" height="20px"></img>
-    </button>
-
-    </section>
 
   </div>
 ))}
-</section>
+</Secao>
 </>
 
 )}

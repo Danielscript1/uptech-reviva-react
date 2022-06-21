@@ -1,23 +1,42 @@
-
+import styled from 'styled-components';
 import { carrinho } from 'common/utils/produtosCarrinhos';
 import { useRecoilValue } from 'recoil';
-import style from "./Total.module.scss";
+import BotaoSacola from '../../BotaoSacola';
 
+const SecaoTotal = styled.section`
+    display: flex;
+    width: 50%;
 
+`;
 
+const SecaoTotalInformacoes = styled.section`
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        padding: 2rem;
+        background-color: rgb(200, 173, 173);
+
+`;
+
+const SecaoTotalDivisao = styled.section`
+            display: flex;
+            justify-content: space-between;
+            font-size: 3rem;
+
+`;
 
 export default function Total({total}:any){
 
   const produtosSacola = useRecoilValue(carrinho);
 
   return(
-          <section className={style.total}>
+          <SecaoTotal >
 
-                    <section className={style.total__informacoes}>
-                        <section className={style.total__divisao}>
+                    <SecaoTotalInformacoes>
+                        <SecaoTotalDivisao >
                             <p>Total</p>
                             <p>R${total}</p>
-                        </section>
+                        </SecaoTotalDivisao>
                          
                         {produtosSacola.map(item =>(
                           
@@ -32,12 +51,12 @@ export default function Total({total}:any){
                         
                        
                         
-                        <button>Ir para pagamento</button>
-                    </section>
+                        <BotaoSacola onClick={()=>(produtosSacola)}>Ir para pagamento</BotaoSacola>
+                    </SecaoTotalInformacoes>
 
 
 
-          </section>
+          </SecaoTotal>
 
             
   )
