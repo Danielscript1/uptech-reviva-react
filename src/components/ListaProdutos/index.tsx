@@ -8,8 +8,10 @@ import { Link } from 'react-router-dom';
 import TamanhosDisponivel from 'components/TamanhosDisponivel';
 import BotaoSacola from '../BotaoSacola';
 import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
 import {Titulo,DescricaoItems,SecaoImagem } from 'styles/index';
+import {Secao,ContainerBorda} from  './style';
+
+
 export interface imagens{
   url:string;
   descricao:string;
@@ -35,38 +37,26 @@ interface listaProdutos{
   
 }
 
-const Secao = styled.section`
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(4, 1fr);
-
-`;
-
-const ContainerBorda = styled.section`
-    border: 1px solid #000;
-
-`
 
 
 
 export  function ListaDeProdutos({titulo,Produtos}:listaProdutos){
   const navigate = useNavigate();
 
-   const [carrinho, setCarrinho] =  useRecoilState(statusCarrinho);
-   const [estoque, setEstoque] = useRecoilState(listaDeProdutos);
-
-    function sacolaCompra(produtos:Props){
-    const novoCarrinho = addCarrinho(carrinho,produtos);
-    setCarrinho(novoCarrinho);
-      console.log("carrinho:",carrinho)
-    const estoqueProduto= diminuiEstoque(estoque, produtos);
-    setEstoque(estoqueProduto); 
-    console.log("estoque",estoque) 
-
     
-   
     
-  }
+  const [carrinho, setCarrinho] =  useRecoilState(statusCarrinho);
+  const [estoque, setEstoque] = useRecoilState(listaDeProdutos);
+
+ function sacolaCompra(produtos:Props){
+ const novoCarrinho = addCarrinho(carrinho,produtos);
+ setCarrinho(novoCarrinho);
+   console.log("carrinho:",carrinho)
+ const estoqueProduto= diminuiEstoque(estoque, produtos);
+ setEstoque(estoqueProduto); 
+ console.log("estoque",estoque) 
+
+ }
 
 
 
@@ -87,7 +77,7 @@ export  function ListaDeProdutos({titulo,Produtos}:listaProdutos){
 {Produtos.map((item) =>(
    
   
-  <div className='cartao' key={item.id}> 
+  <div  key={item.id}> 
       <ContainerBorda>
         <SecaoImagem width="100"  src={item.imagens[0].url} alt={item.imagens[0].descricao}/>
         <TamanhosDisponivel tamanhos={item.tamanhos_disponiveis}/>

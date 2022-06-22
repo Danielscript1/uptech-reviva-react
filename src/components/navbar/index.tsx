@@ -1,62 +1,39 @@
 import { rotas } from 'common/utils/rotas';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
-import { corPrimaria,tamanhoTextoNavegacao ,corSecundario} from 'styles/variaveis';
-
-
-
-
- const Navegacao = styled.nav`
-        display: flex;
-        align-items: center;
-        height: 4.8rem;
-        background-color: ${corPrimaria};
-        justify-content: space-around;
-      .opcoesNavegacao{  
-        display: flex;
-        font-size: ${tamanhoTextoNavegacao};
-        }  
-       
-   
-   `; 
-
- const ItemsNavegacao = styled.li`
-            margin: 1rem;
-            list-style: none;
-            a{
-               color:${corSecundario};
-               &:hover {
-                    color: aqua;
-                }
-            }
-          
-              
- `;  
-
+import {MenuBotao,Navegacao,Lista,ItemLink,Icon} from  './style';
 
 
 
 
 export default function Navbar(){
- 
+   const [click, setClick] = useState(false);
+   const handleClick = () => setClick(!click);
 
 return(
-  <Navegacao >
-            
-          <ul  className="opcoesNavegacao">
-              {rotas.map((rotas,index)=>(
-                  <ItemsNavegacao key={index} >
-                     <Link to={rotas.to}>
-                        {rotas.label}
-                     </Link>
+   <>
+   
+   
+      <MenuBotao  onClick={handleClick}>
+            <Icon clicked={click}>&nbsp;</Icon>
+      </MenuBotao>
+      <Navegacao  clicked={click}>
+            <Lista>
 
-                  </ItemsNavegacao>
+           
+            
+              {rotas.map((rotas,index)=>(
+                  <li key={index} >
+                     <ItemLink to={rotas.to}>
+                        {rotas.label}
+                     </ItemLink>
+
+                  </li>
               ))}
-           </ul>
           
+          </Lista>
 
    </Navegacao>
+   </>
 )
 
 }

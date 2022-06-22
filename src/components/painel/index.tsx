@@ -1,30 +1,9 @@
 import styled from 'styled-components';
 import { corPrimaria} from 'styles/variaveis';
 import LogoReviva from 'components/LogoReviva';
+import {PainelPrincipal,SecaoPainel,ContainerLogo} from  './style';
 
-const PainelPrincipal = styled.section`
-    width: 100%;
-    overflow: hidden;
-    color: #fff;
 
-`;
-
-const SecaoPainel = styled.div`
-        display: grid;
-        text-align: center;
-        grid-template-rows: repeat(3, 1fr);
-        padding: 2rem;
-        background-color: ${corPrimaria};
-        font-size: 3rem;
-        
-
-`;
-
-const ContainerLogo = styled.figure`
-  display: grid;
-  justify-items: end;
-        
-`;
 
 export const Descricao = styled.p`
     text-align: center;

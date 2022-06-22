@@ -1,17 +1,10 @@
 import { getPublicImageUrl } from 'common/funcoes/caminhoImagem';
 import { Icones } from 'Interfaces/Icones';
-import styled from 'styled-components';
 import { Icone, Titulo } from 'styles';
+import { Redes } from './style';
 
 
 
-
-
-const Redes = styled.section`
-  cursor: pointer;
-  color: #fff;
-  font-size: 2rem;     
-`;
 
 
 

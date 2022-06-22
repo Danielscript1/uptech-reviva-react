@@ -1,29 +1,9 @@
-import styled from 'styled-components';
 import { carrinho } from 'common/utils/produtosCarrinhos';
 import { useRecoilValue } from 'recoil';
 import BotaoSacola from '../../BotaoSacola';
+import {SecaoTotal,SecaoTotalInformacoes,SecaoTotalDivisao} from  './style';
 
-const SecaoTotal = styled.section`
-    display: flex;
-    width: 50%;
 
-`;
-
-const SecaoTotalInformacoes = styled.section`
-        display: flex;
-        flex-direction: column;
-        gap: 4rem;
-        padding: 2rem;
-        background-color: rgb(200, 173, 173);
-
-`;
-
-const SecaoTotalDivisao = styled.section`
-            display: flex;
-            justify-content: space-between;
-            font-size: 3rem;
-
-`;
 
 export default function Total({total}:any){
 

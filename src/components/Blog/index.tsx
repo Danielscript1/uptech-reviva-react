@@ -1,39 +1,12 @@
-import styled from 'styled-components';
 import { Titulo } from 'styles';
 import  { Descricao } from 'components/painel';
-
-
-const ContainerBlog = styled.section`
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(1, 1fr 2fr);
-    font-size: 5rem;
-
-
-`;
-
-
-const Imagens = styled.img`
-  width:  ${(props)=> props.width === '100' ? '100%': '20%'  };;
- 
-`;
-
-const SecaoDivisao = styled.section`
-
-    display: flex;
-    margin-bottom: 1rem;
-    font-size: 3rem;
-
-
-`;
-
+import {ContainerBlog,Imagens,SecaoDivisao} from  './style';
 
 
 
 export default function Blog(){
   return(
     
-
 
     <ContainerBlog >
         <figure>

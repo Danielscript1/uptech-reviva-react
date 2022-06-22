@@ -3,7 +3,7 @@ import { Icones } from 'Interfaces/Icones';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Icone, Titulo } from 'styles';
-import { ItemsNavegacao, Navegacao } from '../NavegacaoRodape';
+import { ItemsNavegacao, Navegacao } from '../NavegacaoRodape/style';
 
 
 

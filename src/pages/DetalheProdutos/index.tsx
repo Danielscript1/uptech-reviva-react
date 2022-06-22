@@ -14,6 +14,10 @@ import {SecaoImagem} from '../../styles/index';
 const PaginaDetalhe = styled.section`
         display: grid;
         grid-template-columns: 1fr 1fr;
+
+        @media screen and (max-width: 700px){
+          grid-template-columns: 1fr ;
+        }
 `;
 
 

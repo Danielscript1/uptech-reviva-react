@@ -3,14 +3,9 @@ import Total from './Total';
 import {carrinho} from "common/utils/produtosCarrinhos";
 import { useRecoilValue } from 'recoil';
 import { CalculoTotal } from 'common/funcoes/calculoTotalCarrinho';
-import styled from 'styled-components';
+import {Compra} from  './style';
 
 
-const Compra = styled.div`
-    display: flex;
-    font-size: 10rem;
-
-`;
 
 
 export default function Sacola(){

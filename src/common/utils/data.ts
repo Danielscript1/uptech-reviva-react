@@ -4,7 +4,7 @@ export const listaDeProdutos = atom<IListaProdutos[]>({
    key: 'listaDeProdutos',
     default:[
   {   id:0,  
-      nome: 'Camiseta Social Masculina',
+      nome: 'Camiseta Social',
       url: 'camiseta-social',
       preco: 39.90,
       descricao: 'A Camiseta Lipp é linda para ser usada em qualquer lugar',
@@ -58,7 +58,7 @@ export const listaDeProdutos = atom<IListaProdutos[]>({
 
   {   
       id:4,  
-      nome: 'Camiseta Jeans Feminina',
+      nome: 'Camiseta Jeans ',
       url: 'camiseta-jeans-feminina',
       preco: 39.90,
       descricao: 'A Camiseta Jeans Feminina é linda para ser usada em qualquer lugar',
@@ -84,7 +84,7 @@ export const listaDeProdutos = atom<IListaProdutos[]>({
   },
 
   {   id:6,
-      nome: 'Camiseta Jeans Feminina clara',
+      nome: 'Camiseta Jeans  clara',
       url: 'camiseta-jeans-clara',
       preco: 39.90,
       descricao: 'A Camiseta Jeans Feminina é linda para ser usada em qualquer lugar',
@@ -98,7 +98,7 @@ export const listaDeProdutos = atom<IListaProdutos[]>({
 
   {   
       id:7,  
-      nome: 'Camiseta Social Feminina',
+      nome: 'Camiseta Social ',
       url: 'camiseta-social-feminina',
       preco: 39.90,
       descricao: 'A Camiseta Jeans Feminina é linda para ser usada em qualquer lugar',

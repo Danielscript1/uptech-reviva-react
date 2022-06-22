@@ -1,21 +1,10 @@
-import { CalculoTotal } from 'common/funcoes/calculoTotalCarrinho';
-import { carrinho } from 'common/utils/produtosCarrinhos';
 import IListaProdutos from 'Interfaces/IListaProdutos';
-import styled from 'styled-components';
-import style from "./ItemSacola.module.scss";
 import {SecaoImagem,Titulo,DescricaoItems} from '../../../styles/index';
 import TamanhosDisponivel from 'components/TamanhosDisponivel';
+import {CompraCategoria} from  './style';
 
 
 
-const CompraCategoria = styled.section`
-     display: grid;
-     grid-template-columns: repeat(6, 1fr);
-     width: 100%;
-     gap: 0.8rem;
-     margin-bottom: 2rem;
-
-`;
 
 
 
