@@ -1,9 +1,9 @@
 import ItemSacola from './ItemSacola';
 import Total from './Total';
-import style from './Sacola.module.scss';
 import {carrinho} from "common/utils/produtosCarrinhos";
 import { useRecoilValue } from 'recoil';
 import { CalculoTotal } from 'common/funcoes/calculoTotalCarrinho';
+import {Compra} from  './style';
 
 
 
@@ -14,7 +14,7 @@ export default function Sacola(){
   
   return(
     
-     <div className={style.compra}>
+     <Compra >
       <div>
       {produtosSacola.map(item =>(
          <ItemSacola
@@ -25,7 +25,7 @@ export default function Sacola(){
       </div>
       
       <Total total={total}  />
-      </div>
+      </Compra>
   
 
   )

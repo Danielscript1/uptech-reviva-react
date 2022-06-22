@@ -1,8 +1,8 @@
-import Carrinho from 'pages/carrinho';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { RecoilRoot } from 'recoil';
-import './styles/Base.module.scss'
+import { GlobalStyle } from './styles/GlobalStyle';
+import Routes from './routes';
 
 
 const root = ReactDOM.createRoot(
@@ -10,8 +10,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
+    <GlobalStyle/>
     <RecoilRoot>
-    <Carrinho/>
+      <Routes/>
     </RecoilRoot>
     
   </React.StrictMode>

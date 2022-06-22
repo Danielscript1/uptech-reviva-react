@@ -1,10 +1,11 @@
-import style from "./Main.module.scss";
+import {Container} from  './style';
+
 
 type Props = {
   children: React.ReactNode; 
 };
 export default function Main(props:Props){
   return(
-    <main className={style.principal}>{props.children}</main>
+    <Container>{props.children}</Container>
   )
 }

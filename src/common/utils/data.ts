@@ -4,7 +4,7 @@ export const listaDeProdutos = atom<IListaProdutos[]>({
    key: 'listaDeProdutos',
     default:[
   {   id:0,  
-      nome: 'Camiseta Social Masculina',
+      nome: 'Camiseta Social',
       url: 'camiseta-social',
       preco: 39.90,
       descricao: 'A Camiseta Lipp é linda para ser usada em qualquer lugar',
@@ -12,7 +12,7 @@ export const listaDeProdutos = atom<IListaProdutos[]>({
       quantidade_disponivel: 12,
       secaoProdutos:1,
       imagens: [
-          { url: process.env.PUBLIC_URL + 'img/camisa6.png', descricao: 'camiseta social masculina no tamanho p' }
+          { url: '../img/camisa6.png', descricao: 'camiseta social masculina no tamanho p' }
       ],
   },
 
@@ -25,7 +25,7 @@ export const listaDeProdutos = atom<IListaProdutos[]>({
       quantidade_disponivel: 12,
       secaoProdutos:1,
       imagens: [
-          { url: process.env.PUBLIC_URL + 'img/camisa3.png', descricao: 'camiseta molentom  tamanho p' }
+          { url:  '../img/camisa3.png', descricao: 'camiseta molentom  tamanho p' }
       ],
   },
   {   
@@ -38,7 +38,7 @@ export const listaDeProdutos = atom<IListaProdutos[]>({
       quantidade_disponivel: 12,
       secaoProdutos:1,
       imagens: [
-          { url: process.env.PUBLIC_URL + 'img/camisa4.1.png', descricao: 'camiseta florida  tamanho p' }
+          { url:  '../img/camisa4.1.png', descricao: 'camiseta florida  tamanho p' }
       ],
   },
 
@@ -52,13 +52,13 @@ export const listaDeProdutos = atom<IListaProdutos[]>({
       quantidade_disponivel: 12,
       secaoProdutos:1,
       imagens: [
-          { url: process.env.PUBLIC_URL + 'img/camisa5.png', descricao: 'camiseta Quadriculada  tamanho p' }
+          { url: '../img/camisa5.png', descricao: 'camiseta Quadriculada  tamanho p' }
       ],
   },
 
   {   
       id:4,  
-      nome: 'Camiseta Jeans Feminina',
+      nome: 'Camiseta Jeans ',
       url: 'camiseta-jeans-feminina',
       preco: 39.90,
       descricao: 'A Camiseta Jeans Feminina é linda para ser usada em qualquer lugar',
@@ -66,7 +66,7 @@ export const listaDeProdutos = atom<IListaProdutos[]>({
       quantidade_disponivel: 12,
       secaoProdutos:2,
       imagens: [
-          { url: process.env.PUBLIC_URL + 'img/mulher1.png', descricao: 'camiseta Jeans Feminina  tamanho p' }
+          { url: '../img/mulher1.png', descricao: 'camiseta Jeans Feminina  tamanho p' }
       ],
   },
   {   
@@ -79,12 +79,12 @@ export const listaDeProdutos = atom<IListaProdutos[]>({
       quantidade_disponivel: 12,
       secaoProdutos:2,
       imagens: [
-          { url: process.env.PUBLIC_URL + 'img/mulher2.png', descricao: 'camiseta Jeans Feminina  tamanho p' }
+          { url: '../img/mulher2.png', descricao: 'camiseta Jeans Feminina  tamanho p' }
       ],
   },
 
   {   id:6,
-      nome: 'Camiseta Jeans Feminina clara',
+      nome: 'Camiseta Jeans  clara',
       url: 'camiseta-jeans-clara',
       preco: 39.90,
       descricao: 'A Camiseta Jeans Feminina é linda para ser usada em qualquer lugar',
@@ -92,13 +92,13 @@ export const listaDeProdutos = atom<IListaProdutos[]>({
       quantidade_disponivel: 12,
       secaoProdutos:2,
       imagens: [
-          { url: process.env.PUBLIC_URL + 'img/mulher3.png', descricao: 'camiseta Jeans Feminina  tamanho p' }
+          { url:  '../img/mulher3.png', descricao: 'camiseta Jeans Feminina  tamanho p' }
       ],
   },
 
   {   
       id:7,  
-      nome: 'Camiseta Social Feminina',
+      nome: 'Camiseta Social ',
       url: 'camiseta-social-feminina',
       preco: 39.90,
       descricao: 'A Camiseta Jeans Feminina é linda para ser usada em qualquer lugar',
@@ -106,7 +106,7 @@ export const listaDeProdutos = atom<IListaProdutos[]>({
       quantidade_disponivel: 12,
       secaoProdutos:2,
       imagens: [
-          { url: process.env.PUBLIC_URL + 'img/mulher4.png', descricao: 'camiseta social Feminina  tamanho p' }
+          { url: '../img/mulher4.png', descricao: 'camiseta social Feminina  tamanho p' }
       ],
   }
 

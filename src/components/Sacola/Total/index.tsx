@@ -1,8 +1,7 @@
-
 import { carrinho } from 'common/utils/produtosCarrinhos';
 import { useRecoilValue } from 'recoil';
-import style from "./Total.module.scss";
-
+import BotaoSacola from '../../BotaoSacola';
+import {SecaoTotal,SecaoTotalInformacoes,SecaoTotalDivisao} from  './style';
 
 
 
@@ -11,13 +10,13 @@ export default function Total({total}:any){
   const produtosSacola = useRecoilValue(carrinho);
 
   return(
-          <section className={style.total}>
+          <SecaoTotal >
 
-                    <section className={style.total__informacoes}>
-                        <section className={style.total__divisao}>
+                    <SecaoTotalInformacoes>
+                        <SecaoTotalDivisao >
                             <p>Total</p>
                             <p>R${total}</p>
-                        </section>
+                        </SecaoTotalDivisao>
                          
                         {produtosSacola.map(item =>(
                           
@@ -32,12 +31,12 @@ export default function Total({total}:any){
                         
                        
                         
-                        <button>Ir para pagamento</button>
-                    </section>
+                        <BotaoSacola onClick={()=>(produtosSacola)}>Ir para pagamento</BotaoSacola>
+                    </SecaoTotalInformacoes>
 
 
 
-          </section>
+          </SecaoTotal>
 
             
   )

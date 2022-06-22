@@ -1,32 +1,39 @@
+import { rotas } from 'common/utils/rotas';
 import { useState } from 'react';
-import style from './Navbar.module.scss';
-export default function Navbar(){
-  
+import {MenuBotao,Navegacao,Lista,ItemLink,Icon} from  './style';
 
+
+
+
+export default function Navbar(){
+   const [click, setClick] = useState(false);
+   const handleClick = () => setClick(!click);
 
 return(
-  <nav className={style.navegacao}>
-       
-          <ul className={style.navegacao__opcoes} >
-               <li className={style.nav__item_menu}>
-                  <a className={style.link} href="#">Pagina Inicial</a>
-               </li>
-               <li className={style.nav__item_menu}>
-                   <a className={style.link} href="#">Masculina</a>
-                </li>
-                <li className={style.nav__item_menu}>
-                   <a className={style.link} href="#">Moda Feminina</a>
-                </li>
-                <li className={style.nav__item_menu}>
-                  <a className={style.link} href="#">Moda Infantíl</a>
-                </li>
-                <li className={style.nav__item_menu}>
-                  <a className={style.link} href="#">Manual de Moda</a>
-                </li>
-           </ul>
-          
+   <>
+   
+   
+      <MenuBotao  onClick={handleClick}>
+            <Icon clicked={click}>&nbsp;</Icon>
+      </MenuBotao>
+      <Navegacao  clicked={click}>
+            <Lista>
 
-        </nav>
+           
+            
+              {rotas.map((rotas,index)=>(
+                  <li key={index} >
+                     <ItemLink to={rotas.to}>
+                        {rotas.label}
+                     </ItemLink>
+
+                  </li>
+              ))}
+          
+          </Lista>
+
+   </Navegacao>
+   </>
 )
 
 }

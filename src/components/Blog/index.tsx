@@ -1,31 +1,36 @@
-import style from './Blog.module.scss';
+import { Titulo } from 'styles';
+import  { Descricao } from 'components/painel';
+import {ContainerBlog,Imagens,SecaoDivisao} from  './style';
+
+
+
 export default function Blog(){
   return(
-    <section className={style.painel__centro}>
+    
 
-
-    <div className={style.painel__central}>
+    <ContainerBlog >
         <figure>
 
-            <img src={process.env.PUBLIC_URL + "img/blog/painel.png"} className={style.imagem__total}/>
-            <p className={style.painel__descricao}>O que fazer com o look que usou no carnaval? Confira já como fazer uso dessas mesmas peças no inverso e continuar na moda!</p>
+            <Imagens src={process.env.PUBLIC_URL + "img/blog/painel.png"} width="100"/>
+            <Titulo>O que fazer com o look que usou no carnaval? Confira já como fazer uso dessas mesmas peças no inverso e continuar na moda!</Titulo>
 
         </figure>
 
-        <section className={style.painel__subsecao}>
+        <section>
 
-            <section className={style.painel__divisao}>
-            <img src={process.env.PUBLIC_URL + "img/blog/loja.jpg"}/>
-            <p className="painel__descricao">O que fazer com o look que usou no carnaval? Confira já como fazer uso dessas mesmas peças no inverso e continuar na moda!</p>
-            </section>  
-            <section className={style.painel__divisao}>
-            <img src={process.env.PUBLIC_URL + "img/blog/loja.jpg"}/>
-            <p className="painel__descricao">O que fazer com o look que usou no carnaval? Confira já como fazer uso dessas mesmas peças no inverso e continuar na moda!</p>
-            </section>  
+            <SecaoDivisao >
+            <Imagens src={process.env.PUBLIC_URL + "img/blog/loja.jpg"}/>
+            <Descricao className="painel__descricao">O que fazer com o look que usou no carnaval? Confira já como fazer uso dessas mesmas peças no inverso e continuar na moda!</Descricao>
+            </SecaoDivisao>  
+            <SecaoDivisao >
+            <Imagens src={process.env.PUBLIC_URL + "img/blog/loja.jpg"}/>
+            <Descricao>O que fazer com o look que usou no carnaval? Confira já como fazer uso dessas mesmas peças no inverso e continuar na moda!</Descricao>
+            </SecaoDivisao>  
+        </section>
 
-        </section>  
+    </ContainerBlog>  
 
-      </div>   
-  </section>   
+      
+  
   )
 }
