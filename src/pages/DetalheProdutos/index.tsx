@@ -1,12 +1,12 @@
-import { listaDeProdutos } from 'common/utils/data';
 import BotaoPesquisar from 'components/BotaoPesquisar';
 import BotaoSacola from 'components/BotaoSacola';
 import { ListaDeProdutos } from 'components/ListaProdutos';
 import { NaoEncontrado } from 'components/NaoEncontrado';
 import Painel, { Descricao } from 'components/painel';
 import TamanhosDisponivel from 'components/TamanhosDisponivel';
+import ProdutosProvider, { ProdutosContext } from 'contexts/produtosContext';
+import { useContext } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { RecoilRoot, useRecoilValue } from 'recoil';
 import styled from 'styled-components';
 import { Titulo } from 'styles';
 import {SecaoImagem} from '../../styles/index';
@@ -48,18 +48,21 @@ const SecaoContainer = styled.section`
 
 
 function DetalhesProdutos() {
-  const produtos = useRecoilValue(listaDeProdutos);
-  const secaoProdutos1 = Object.values(produtos).filter(produto => produto.secaoProdutos === 1) ;
+  const {produt,setProdutos} = useContext(ProdutosContext);
+  const secaoProdutos1 = produt.filter(produto => produto.secaoProdutos === 1) ;
   const navegation = useNavigate();
   const { id } = useParams();
-  const detalhes = produtos.find(item=> item.id === Number(id));
+  const detalhes = produt.find(item=> item.id === Number(id));
   console.log("recebendo detalhes",detalhes);
   if(!detalhes){
     return <NaoEncontrado />;
   }
  
   return(
-    <RecoilRoot>
+   
+  <>
+
+    
      <BotaoPesquisar/>
      <PaginaDetalhe>
       <SecaoImagem src={detalhes.imagens[0].url} width="100"/>
@@ -92,7 +95,7 @@ function DetalhesProdutos() {
       <Painel/>
       <ListaDeProdutos titulo='Últimos lançamentos'  Produtos={secaoProdutos1}/>
 
-    </RecoilRoot>  
+      </>
    
   )
 

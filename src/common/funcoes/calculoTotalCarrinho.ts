@@ -1,5 +1,3 @@
-import { carrinho } from 'common/utils/produtosCarrinhos';
-//import { useRecoilValue } from 'recoil';
 
 
 export const CalculoTotal = (produtos:any) =>{

@@ -1,22 +1,28 @@
 import ItemSacola from './ItemSacola';
 import Total from './Total';
-import {carrinho} from "common/utils/produtosCarrinhos";
-import { useRecoilValue } from 'recoil';
 import { CalculoTotal } from 'common/funcoes/calculoTotalCarrinho';
 import {Compra} from  './style';
+import { CarrinhoContext, CarrinhoProvider, useCarrinhoContext } from 'contexts/carrinhoContext';
+
+
 
 
 
 
 export default function Sacola(){
-   const produtosSacola = useRecoilValue(carrinho);
-   const total = CalculoTotal(produtosSacola);
+
+   const {carrinho} = useCarrinhoContext();
+  console.log("compras",carrinho)
   
+   const total = CalculoTotal(carrinho);
   return(
+
+
+   
     
-     <Compra >
+       <Compra >
       <div>
-      {produtosSacola.map(item =>(
+      {carrinho.map(item =>(  
          <ItemSacola
          key={item.id}
          {...item}
@@ -26,7 +32,9 @@ export default function Sacola(){
       
       <Total total={total}  />
       </Compra>
-  
+   
+    
+   
 
   )
 }

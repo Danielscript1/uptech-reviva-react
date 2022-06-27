@@ -1,13 +1,11 @@
-import { carrinho } from 'common/utils/produtosCarrinhos';
-import { useRecoilValue } from 'recoil';
+import { CarrinhoContext, useCarrinhoContext } from 'contexts/carrinhoContext';
 import BotaoSacola from '../../BotaoSacola';
 import {SecaoTotal,SecaoTotalInformacoes,SecaoTotalDivisao} from  './style';
 
 
 
 export default function Total({total}:any){
-
-  const produtosSacola = useRecoilValue(carrinho);
+  const {carrinho,setCarrinho,adicionarProduto} = useCarrinhoContext();
 
   return(
           <SecaoTotal >
@@ -18,7 +16,7 @@ export default function Total({total}:any){
                             <p>R${total}</p>
                         </SecaoTotalDivisao>
                          
-                        {produtosSacola.map(item =>(
+                        {carrinho.map(item =>(
                           
                           
                            <p>  {item.quantidade_disponivel} x {item.preco} = {item.quantidade_disponivel*item.preco} </p>
@@ -31,7 +29,7 @@ export default function Total({total}:any){
                         
                        
                         
-                        <BotaoSacola onClick={()=>(produtosSacola)}>Ir para pagamento</BotaoSacola>
+                        <BotaoSacola onClick={()=>(adicionarProduto)}>Ir para pagamento</BotaoSacola>
                     </SecaoTotalInformacoes>
 
 
