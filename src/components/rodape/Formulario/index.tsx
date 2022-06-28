@@ -9,7 +9,7 @@ export function Formulario({menu}:Icones){
     
     <CampoFormulario>
     <Titulo >{menu}</Titulo>
-    <Assine type="text" />
+    <Assine type="text" placeholder='Assine Agora'/>
     <Botao>ASSINAR JÁ</Botao>
     </CampoFormulario>
     

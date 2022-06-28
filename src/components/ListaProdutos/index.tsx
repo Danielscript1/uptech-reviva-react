@@ -70,7 +70,7 @@ export  function ListaDeProdutos({titulo,Produtos}:listaProdutos){
         <SecaoImagem width="100"  src={item.imagens[0].url} alt={item.imagens[0].descricao}/>
         <TamanhosDisponivel tamanhos={item.tamanhos_disponiveis}/>
       </ContainerBorda>
-      <Link to={`/detalhes/${item.id}`} onClick={()=>redirecionarParaDetalhes(item)}>
+      <Link to={`/detalhes/${item.id}`} onClick={()=>redirecionarParaDetalhes(item)} >
         <Titulo>{item.nome}</Titulo>
         <DescricaoItems >R${item.preco}</DescricaoItems>
       </Link>
