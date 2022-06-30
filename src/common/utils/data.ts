@@ -1,8 +1,4 @@
-import { atom } from "recoil";
-import IListaProdutos from "Interfaces/IListaProdutos"
-export const listaDeProdutos = atom<IListaProdutos[]>({
-   key: 'listaDeProdutos',
-    default:[
+export const Produtos = [
   {   id:0,  
       nome: 'Camiseta Social',
       url: 'camiseta-social',
@@ -110,6 +106,6 @@ export const listaDeProdutos = atom<IListaProdutos[]>({
       ],
   }
 
-    ]
+]
 
-})
+

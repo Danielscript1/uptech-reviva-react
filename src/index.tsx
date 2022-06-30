@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { RecoilRoot } from 'recoil';
 import { GlobalStyle } from './styles/GlobalStyle';
 import Routes from './routes';
+import ProdutosProvider from 'contexts/produtosContext';
+import { CarrinhoProvider } from 'contexts/carrinhoContext';
+
 
 
 const root = ReactDOM.createRoot(
@@ -10,11 +12,14 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <GlobalStyle/>
-    <RecoilRoot>
-      <Routes/>
-    </RecoilRoot>
-    
+    <GlobalStyle/>  
+    <ProdutosProvider>
+      <CarrinhoProvider>
+        <Routes/>
+      </CarrinhoProvider>
+      
+    </ProdutosProvider>   
+      
   </React.StrictMode>
 );
 

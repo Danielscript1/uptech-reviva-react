@@ -2,6 +2,7 @@ import IListaProdutos from 'Interfaces/IListaProdutos';
 import {SecaoImagem,Titulo,DescricaoItems} from '../../../styles/index';
 import TamanhosDisponivel from 'components/TamanhosDisponivel';
 import {CompraCategoria} from  './style';
+import { useCarrinhoContext } from 'contexts/carrinhoContext';
 
 
 
@@ -10,7 +11,8 @@ import {CompraCategoria} from  './style';
 
 
 export default function ItemSacola(props:IListaProdutos){
-    const {nome,url,preco,descricao,tamanhos_disponiveis,quantidade_disponivel,subTotal,imagens} = props;
+    const {id,nome,url,preco,descricao,tamanhos_disponiveis,quantidade_disponivel,subTotal,imagens} = props;
+    const {adicionarProduto,removerProduto} = useCarrinhoContext();
   return(
    <>
    
@@ -29,12 +31,18 @@ export default function ItemSacola(props:IListaProdutos){
                         </section> 
                         <section>
                             <Titulo>Quantidade</Titulo>
-                            <input type="number"   size={2}/>
+                            <button onClick={() => adicionarProduto(props)}>+</button>
+                                {props.quantidade_disponivel}
+                            <button onClick={() => removerProduto(id)}>-</button>
+                            
                         </section>
                         <section>
                             <Titulo>Subtotal</Titulo>
-                            <DescricaoItems id="total">R$ 39,90</DescricaoItems>
+                            <DescricaoItems id="total">R$ {(preco*quantidade_disponivel).toFixed(2).replace('.', ',')}</DescricaoItems>
                         </section>
+
+                       
+                       
 
         </CompraCategoria>
    

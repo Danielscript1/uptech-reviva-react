@@ -3,6 +3,7 @@ import { NaoEncontrado } from 'components/NaoEncontrado';
 import Navbar from 'components/navbar';
 import PaginaPadrao from 'components/PaginaPadrao';
 import Rodape from 'components/rodape';
+import ProdutosProvider from 'contexts/produtosContext';
 import Carrinho from 'pages/carrinho';
 import DetalhesProdutos from 'pages/DetalheProdutos';
 import Home from 'pages/home';
@@ -13,10 +14,12 @@ export default function AppRouter(){
   <Router>
     <Header/>
     <Routes>
+     
       <Route path='/' element={<PaginaPadrao/>}>
         <Route index element={<Home/>}/>
         <Route path="/carrinho" element={<Carrinho/>}/>
         <Route path="/detalhes/:id" element={<DetalhesProdutos/>}/>
+        
       </Route>
       <Route path='*' element={<NaoEncontrado/>}/>
      
